@@ -1,5 +1,6 @@
 const express = require('express');
-const um = require.main.require('./models/userModel');
+const um = require.main.require('./models/AdminModel');
+
 const router = express.Router();
 
 router.get('/',(req,res)=>
@@ -17,19 +18,15 @@ router.post('/',(req,res)=>
    um.validate(user,(type) => {
            if ( type== 'admin' ) {
                res.cookie('username', req.body.username);
-               res.redirect('/home');           
+               res.redirect('/adminhome');           
            }
-           else if(type== 'manager'){
+           else if(type== 'manager' || 'Manager'){
             res.cookie('username', req.body.username);
-            res.redirect('/manager');             
+            res.redirect('/mhome');             
         }
-        else if(type== 'employee'){
+        else if(type== 'user'){
             res.cookie('username', req.body.username);
             res.redirect('/userhome');             
-        }
-        else if(type== 'customer'){
-            res.cookie('username', req.body.username);
-            res.redirect('/agent');             
         }
            else {
                 res.redirect('/login');           

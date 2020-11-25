@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee List Page</title>
+	<link rel="stylesheet" type="text/css" href="/abc/css/style.css">
+</head>
+<body>
+	<h3>Employee Salary List</h3>
+
+	<a href="/Mhome">Back</a> |
+	<a href="/logout">logout</a>
+	<br>
+	<br>
+
+	<table border="1">
+		<tr>
+			<td>ID</td>
+			<td>USERNAME</td>
+			<td>TYPE</td>
+			<td>CONTACT_NO</td>
+		</tr>
+
+		<% for(var i=0; i< emplist.length; i++ ){ %>
+		<tr>
+			<td><%= emplist[i].ID %></td>
+			<td><%= emplist[i].UserName %></td>
+			<td><%= emplist[i].UserType %></td>
+			<td><%= emplist[i].ContactNo %></td>
+			<td> 
+				<a href="/user1/empAddSalary/<%=emplist[i].ID%>">Give Salary</a>  
+			</td>
+		</tr>
+		<% } %>
+	</table>
+</body>
+</html>
