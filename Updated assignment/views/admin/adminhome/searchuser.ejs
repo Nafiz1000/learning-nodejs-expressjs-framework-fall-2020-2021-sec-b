@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=6.0">
+    <title>Search</title>
+</head>
+<body style="background-color:#bedbbb;">
+        <center>
+        <h1>Search Medicine</h1>
+        <br>
+        <form>
+            <input type="text" name="key" id="key" placeholder="Search">
+            <input type="button" id="ajaxSearch" value="Search">
+        </form>
+        <br>
+        <table border="1" id="myTable">
+            <tr>
+                <tr>
+                    <th>Id</th>
+                    <th>Medicine Name</th>
+                    <th>Price</th>
+                    <th>Company Name</th>
+                    <th>Available Quantity</th>
+                    <th>Medicine Type</th>
+                    
+                </tr>
+            </tr>
+            
+        </table>
+    <p class="see"></p>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#ajaxSearch").click((e) => {
+                e.preventDefault();
+                var search = $("#key").val();
+                $(this).closest('myTable').remove();
+                $.ajax({
+                    url: "/adminhome/searchuser",
+                    data: { search: search },
+                    method: "POST",
+                    contentType: "application/x-www-form-urlencoded",
+                    success: function(data){
+                        var results = data.results;
+                        $(".row").remove();
+                        for(var i=0; i<results.length; i++){
+                            $("#myTable").append(
+                                "<tr class='row'>"+
+                                    "<td>"+results[i].id+"</td>"+
+                                    "<td>"+results[i].name+"</td>"+
+                                    "<td>"+results[i].unitprice+"</td>"+
+                                    "<td>"+results[i].VendorName+"</td>"+
+                                    "<td>"+results[i].quantity+"</td>"+
+                                    "<td>"+results[i].Type+"</td>"
+                                +"</tr>"
+                            );
+                        }
+                       
+                        
+                    }, error: function(err) {
+                        alert(err); 
+                    }
+                });
+                
+                
+            });
+        });
+    </script>
+    </center>
+</body>
+</html>
+
