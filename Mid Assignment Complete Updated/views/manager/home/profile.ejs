@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile Info</title>
+	<title>ManagerList</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<body style="background-color:#bedbbb;">
+	<form method="post">
+		<fieldset>
+			<legend>Profile Information</legend>
+
+			<a href="/Mhome">Back</a> |
+	        <a href="/logout">logout</a>
+	        <br>
+	        <br>
+			<table>
+				<tr>
+					<td>Username :</td>
+				    <td><%= users.UserName %></td>
+				</tr>
+
+				<tr>
+					<td>Name :</td>
+				    <td><%= users.Name %></td>
+				</tr>
+
+				<tr>
+				    <td>Password :</td>
+				    <td><%= users.Password %></td>
+			    </tr>
+
+			    <tr>
+				    <td>Email :</td>
+				    <td><%= users.Email %></td>
+			    </tr>
+
+			     <tr>
+				    <td>Contact No :</td>
+				    <td><%= users.ContactNo %></td>
+			    </tr>
+
+			     <tr>
+				    <td>Gender :</td>
+				    <td><%= users.Gender %></td>
+			    </tr>
+
+			    <tr>
+				    <td>Type :</td>
+				    <td><%= users.UserType %></td>
+			    </tr>
+
+			     <tr>
+				    <td>Address :</td>
+				    <td><%= users.Address %></td>
+			    </tr>
+
+
+			    <tr>
+					<td>Want to update Profile !
+					<a href="/user1/update">Update</a> </td>
+				</tr>
+     
+				
+		</fieldset>
+	</form>
+</body>
+</html>
