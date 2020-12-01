@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2020 at 04:41 PM
+-- Generation Time: Dec 01, 2020 at 02:40 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.6
 
@@ -98,6 +98,21 @@ INSERT INTO `messages` (`Message`, `SendFrom`, `SendTo`, `Date`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `purchase`
+--
+
+CREATE TABLE `purchase` (
+  `ID` int(10) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `price` int(10) NOT NULL,
+  `buy` int(10) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `date` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `transaction`
 --
 
@@ -142,7 +157,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID`, `UserName`, `Name`, `Password`, `Email`, `ContactNO`, `NID`, `Gender`, `UserType`, `Address`, `Image`) VALUES
-(2, 'Nafiz', 'Nafiz Ahamed Nahid', '1234', 'Na@gmail.com', 12345677, '0', 'Male', 'admin', 'Dhaka1204', '20200.jpg'),
+(2, 'Nafiz', 'Nafiz Ahamed Nahid', '1234', 'Na@gmail.com', 12345677, '0', 'Male', 'admin', 'Dhaka', '20200.jpg'),
 (3, 'Nahid', 'nafizahmednahid', '12345', 'A@gmail.com', 23423, '0', 'male', 'admin', 'Dhaka', NULL),
 (5, 'Sadat Ebne', 'Sadat', '1234', 's@gmail.com', 345346, '0', 'Male', 'manager', 'Pabna', NULL),
 (7, 'Miraz Hossain', 'Miraz', '1234', 's@gmail.com', 24253, '0', 'Male', 'user', 'Dhaka', NULL),
@@ -152,9 +167,9 @@ INSERT INTO `user` (`ID`, `UserName`, `Name`, `Password`, `Email`, `ContactNO`, 
 (33, 'Rifat Mahin', 'Rifat1', '1234', 's@gmail.com', 24253, '5345635', 'Male', 'user', 'Dhaka', NULL),
 (35, 'Tony Stark', 'Stark', '1234', 's@gmail.com', 24253, '5345635', 'Male', 'user', 'Liberty city', NULL),
 (36, 'nafizahmednahid@', 'Nksaldfsdkgfa', '12345', 'a@gmail.com', 2147483647, NULL, 'male', 'admin', 'Jurain,Dhaka1204', NULL),
-(38, 'undefined', 'Civit', 'undefined', 'undefined', 0, 'undefined', 'undefined', 'Tablet', 'undefined', NULL),
-(39, 'undefined', 'Civit', 'undefined', 'undefined', 0, 'undefined', 'undefined', 'Tablet', 'undefined', NULL),
-(40, 'undefined', 'gerrfergge', 'undefined', 'undefined', 0, 'undefined', 'undefined', 'Tablet', 'undefined', NULL);
+(41, 'Jamil1', 'Jamil  ', '12345', 'A@gmail.com', 234235, '', 'male', 'user', 'Dhaka1204', NULL),
+(42, 'Mahin1', 'Mahin', '12345', 'A@gmail.com', 234235, '', 'male', 'user', 'Dhaka', NULL),
+(43, 'Rahman', 'Rahman Ali ', '12345', 'A@gmail.com', 234235, '', 'male', 'user', 'Cumilla', NULL);
 
 --
 -- Indexes for dumped tables
@@ -198,7 +213,7 @@ ALTER TABLE `empsalary`
 -- AUTO_INCREMENT for table `medicine`
 --
 ALTER TABLE `medicine`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `transaction`
@@ -210,7 +225,7 @@ ALTER TABLE `transaction`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
